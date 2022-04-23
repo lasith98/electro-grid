@@ -59,7 +59,12 @@ public class CustomerResource implements CURDResource<CustomerModel, Long> {
 
         try {
 
-            return new ResponseWrapper<>("Update successful ", customerService.update(model), true);
+            CustomerModel customerModel = customerService.update(model);
+            if(customerModel==null){
+                return new ResponseWrapper<>("Customer Not Found", null , false);
+            }else{
+                return new ResponseWrapper<>("Update successful", customerModel , true);
+            }
         } catch (Exception exception) {
             return new ResponseWrapper<>(ERROR_MESSAGE + exception.getMessage(), null, false);
         }
