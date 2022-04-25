@@ -14,7 +14,7 @@ public class MaintainResource {
     @Produces(MediaType.TEXT_PLAIN)
 
     public String  getMaintain(){
-        System.out.println("this is called");
+
         return repo.getMaintain();
 
     }
@@ -23,7 +23,6 @@ public class MaintainResource {
     @Produces(MediaType.APPLICATION_JSON)
     public MainteinenceModel createMaintain(MainteinenceModel m1)
     {
-        System.out.println((m1));
         repo.createMaintainReco(m1);
         return  m1;
     }
@@ -43,7 +42,6 @@ public class MaintainResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String updateMaintain(MainteinenceModel m1)
     {
-        System.out.println((m1));
         return repo.updateMaintainReco(m1);
     }
     @DELETE
@@ -51,8 +49,6 @@ public class MaintainResource {
     @Produces(MediaType.APPLICATION_JSON)
 
     public String deleteMaintain(@PathParam("ID") int ID){
-
-        MainteinenceModel m= repo.getMaintain(ID);
            return repo.deleteMaintainReco(ID);
     }
     @Path("maintainjson")
@@ -60,7 +56,6 @@ public class MaintainResource {
     @Produces(MediaType.APPLICATION_JSON)
 
     public List <MainteinenceModel>  getMaintainInJson(){
-        System.out.println("this is called");
         return repo.getMaintainInJson();
 
     }
