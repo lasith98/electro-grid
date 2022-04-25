@@ -21,7 +21,7 @@
                                                                         <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
+      <version>4.0.1</version>  
       <scope>provided</scope>
     </dependency>                            <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
@@ -48,6 +48,14 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+    	<groupId>org.glassfish.jersy.media</groupId>
+    	<artifactId>jersey-media-moxy</artifactId>
+    </dependency>
+    
+    
+    
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
