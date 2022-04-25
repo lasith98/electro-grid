@@ -131,6 +131,28 @@ public class MaintainService {
         }
         return feedback;
     }
+
+    public List<MainteinenceModel> getMaintainInJson() {
+        List<MainteinenceModel> maintains = new ArrayList<>();
+        String sql = "select * from maintain";
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs =st.executeQuery(sql);
+            while(rs.next()){
+                MainteinenceModel m= new MainteinenceModel();
+                m.setID(rs.getInt(1));
+                m.setDescription(rs.getString(2));
+                m.setAffected_Area((rs.getString(3)));
+                m.setAffected_time(rs.getString(4));
+                m.setPredicted_time(rs.getString(5));
+                maintains.add(m);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        return maintains;
+    }
 }
 
 

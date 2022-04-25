@@ -3,6 +3,7 @@ import lk.sliit.maintenancesectionservice.Service.MaintainService;
 import lk.sliit.maintenancesectionservice.Model.MainteinenceModel;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 
 @Path("maintain")
@@ -53,5 +54,14 @@ public class MaintainResource {
 
         MainteinenceModel m= repo.getMaintain(ID);
            return repo.deleteMaintainReco(ID);
+    }
+    @Path("maintainjson")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public List <MainteinenceModel>  getMaintainInJson(){
+        System.out.println("this is called");
+        return repo.getMaintainInJson();
+
     }
 }
