@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class MonthlyUsageReportDTO {
     private String date;
-    private Long numberOfUnit;
+    private Long unit;
 }
