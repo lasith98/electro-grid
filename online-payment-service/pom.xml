@@ -49,10 +49,7 @@
       <scope>test</scope>
     </dependency>
     
-    <dependency>
-    	<groupId>org.glassfish.jersy.media</groupId>
-    	<artifactId>jersey-media-moxy</artifactId>
-    </dependency>
+
     
     
     
