@@ -20,7 +20,7 @@ public class CustomerModel extends Model<Long> {
 
     @Override
     public PreparedStatement updateModel(Connection connection) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customer_information SET first_name=?, last_name=?, nic=?, mobile_no=?, email=?, address=? WHERE id=?");
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customer SET first_name=?, last_name=?, nic=?, mobile_no=?, email=?, address=? WHERE id=?");
 
         preparedStatement.setString(1, firstName);
         preparedStatement.setString(2, lastName);
@@ -34,7 +34,7 @@ public class CustomerModel extends Model<Long> {
 
     @Override
     public PreparedStatement saveModel(Connection connection) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customer_information (first_name, last_name, nic, mobile_no, email, address) VALUES (?,?,?,?,?,?) ");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customer (first_name, last_name, nic, mobile_no, email, address) VALUES (?,?,?,?,?,?) ");
 
         preparedStatement.setString(1, firstName);
         preparedStatement.setString(2, lastName);

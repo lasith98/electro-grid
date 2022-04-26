@@ -13,7 +13,7 @@ public class CustomerRepository extends Repository<CustomerModel, Long> {
     public static CustomerRepository getInstance() {
         if (repository == null) {
             repository = new CustomerRepository();
-            repository.tableName = "customer_information";
+            repository.tableName = "customer";
             repository.model = new CustomerModel();
         }
         return repository;

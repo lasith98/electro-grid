@@ -43,6 +43,35 @@ INSERT INTO `billing` VALUES (2,2,'2022-07-01',49,595),(3,2,'2022-07-01',49,595)
 UNLOCK TABLES;
 
 --
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `customer` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `nic` char(15) DEFAULT NULL,
+  `mobile_no` char(10) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (4,'Samira','Hansana','119085893845','0715719553','lasithhanana9@gmail.com','Matara Sri Lanka'),(5,'Lasith','Hansana','119085893845','0715719553','lasithhanana9@gmail.com','Matara Sri Lanka'),(6,'Lasith','Hansana','119085893845','0715719533','lasith@9gmail.com','Matara Sri Lanka');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customer_care`
 --
 
@@ -156,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-26 21:17:12
+-- Dump completed on 2022-04-26 21:26:35
