@@ -12,7 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("Payment")
+@Path("payment")
 public class PaymentController 
 {
 		
@@ -30,7 +30,7 @@ public class PaymentController
 	
 	
 	@GET
-	@Path("Payment/{id}")
+	@Path("payment/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Payment getPay(@PathParam("id")  int id)
 	{
@@ -41,7 +41,7 @@ public class PaymentController
 	
 	
 	@POST
-	@Path("Payment")
+	@Path("payment")
 	public Payment CreatPayment(Payment p1)
 	{
 		repo.create(p1);	
@@ -50,7 +50,7 @@ public class PaymentController
 	
 	
 	@PUT
-	@Path("Payment")
+	@Path("payment")
 	public Payment updatePayment(Payment p1)
 	{
 		if(repo.getPayment(p1.getId()).getId()==0)
@@ -67,7 +67,7 @@ public class PaymentController
 	
 	
 	@DELETE
-	@Path("Payment/{id}")
+	@Path("payment/{id}")
 	public Payment delPay(@PathParam("id")int id)
 	{	
 		Payment p =repo.getPayment(id);
